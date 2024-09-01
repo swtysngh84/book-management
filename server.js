@@ -14,6 +14,10 @@ app.use(bodyParser.json({ limit: "5000kb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 connect();
 
+app.get("/", (req, res) => {
+  res.status(200).json({ response: "v8" });
+});
+
 app.use("/user", userRouter);
 
 app.use("/book", bookRouter);
