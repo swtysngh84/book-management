@@ -13,9 +13,6 @@ const User = new Schema(
     email: {
       type: String,
     },
-    token: {
-      type: String,
-    },
     deletedAt: { type: Date, default: null },
   },
   {
