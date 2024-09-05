@@ -13,9 +13,6 @@ const LoginUser = async (req, res) => {
   const validPassword = await bcrypt.compare(password, user.password);
   if (validPassword) {
     const token = await user.generateAuthToken();
-    await User.findByIdAndUpdate(user._id, {
-      token,
-    });
     res.status(httpStatus.OK).send({
       user: { name: user.name, email: user.email },
       token,
